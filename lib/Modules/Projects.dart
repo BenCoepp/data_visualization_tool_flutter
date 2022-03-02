@@ -2,32 +2,24 @@
 
 import 'package:flutter/material.dart';
 
-class User {
+class Project {
   late String name;
-  late String userName;
-  late String password;
-  late String token;
+  late int id;
 
-  User({
+  Project({
+    required this.id,
     required this.name,
-    required this.userName,
-    required this.password,
-    required this.token,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
+  factory Project.fromJson(Map<String, dynamic> json) {
+    return Project(
       name: json['name'],
-      userName: json['userName'],
-      password: json['password'],
-      token: json['token'],
+      id: json['id'],
     );
   }
 
   Map<String, dynamic> toJson() => {
         'name': name,
-        'userName': userName,
-        'password': password,
-        'token': token,
+        'id': id,
       };
 }
