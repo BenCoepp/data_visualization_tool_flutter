@@ -17,8 +17,19 @@ class OverviewPage_Widget extends State<Overview_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [],
+        body: Row(
+      children: [
+        SizedBox(
+            child: ListView.builder(
+          itemCount: data.projectList.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(data.projectList[index].name),
+            );
+          },
+        )),
+        SizedBox()
+      ],
     ));
   }
 }
