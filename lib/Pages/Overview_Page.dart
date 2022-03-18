@@ -16,20 +16,33 @@ class OverviewPage_Widget extends State<Overview_Page> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Row(
-      children: [
-        SizedBox(
-            child: ListView.builder(
-          itemCount: data.projectList.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(data.projectList[index].name),
-            );
-          },
-        )),
-        SizedBox()
-      ],
-    ));
+    return Center(
+      child: SizedBox(
+        width: double.infinity,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 5,
+              height: MediaQuery.of(context).size.height,
+              child: ListView.builder(
+                itemCount: data.projectList.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(data.projectList[index].name),
+                  );
+                },
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width -
+                  MediaQuery.of(context).size.width / 5,
+              height: MediaQuery.of(context).size.height,
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
