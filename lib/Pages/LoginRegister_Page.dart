@@ -16,9 +16,14 @@ class LoginRegisterPage_Widget extends State<LoginRegister_Page> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(
-      children: [],
-    ));
+    return Container(
+      child: Center(
+        child: Container(
+          width: 350,
+          height: 400,
+          color: Colors.amber,
+        ),
+      ),
+    );
   }
 }

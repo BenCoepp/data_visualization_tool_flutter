@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:data_visualization_tool/Pages/LoginRegister_Page.dart';
 import 'package:data_visualization_tool/Pages/Overview_Page.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Overview_Page()],
+          children: [LoginRegister_Page()],
         ),
       ),
     );
