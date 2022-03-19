@@ -84,7 +84,7 @@ class LoginRegisterPage_Widget extends State<LoginRegister_Page> {
               ),
               OutlinedButton.icon(
                 onPressed: () {
-                  // Respond to button press
+                  Navigator.pushNamed(context, Overview_Page.routeName);
                 },
                 icon: Icon(Icons.add, size: 18),
                 label: Text("Register"),
