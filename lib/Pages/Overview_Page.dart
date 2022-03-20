@@ -3,6 +3,7 @@
 import 'package:data_visualization_tool/Components/Developer_Series.dart';
 import 'package:data_visualization_tool/Components/Simple_LineChart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../data.dart' as data;
 import 'package:charts_flutter/flutter.dart' as charts;
 
@@ -39,32 +40,95 @@ class OverviewPage_Widget extends State<Overview_Page> {
               ),
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width -
-                  MediaQuery.of(context).size.width / 5,
-              height: MediaQuery.of(context).size.height,
-              child: SimpleLineChart(
-                data: [
-                  SimpleSeries(
-                    year: 0,
-                    points: 0,
-                    barColor: charts.ColorUtil.fromDartColor(
-                        Color.fromARGB(255, 62, 213, 152)),
-                  ),
-                  SimpleSeries(
-                    year: 1,
-                    points: 4,
-                    barColor: charts.ColorUtil.fromDartColor(
-                        Color.fromARGB(255, 62, 213, 152)),
-                  ),
-                  SimpleSeries(
-                    year: 2,
-                    points: 3,
-                    barColor: charts.ColorUtil.fromDartColor(
-                        Color.fromARGB(255, 62, 213, 152)),
-                  ),
-                ],
-              ),
-            )
+                width: MediaQuery.of(context).size.width -
+                    MediaQuery.of(context).size.width / 5,
+                height: MediaQuery.of(context).size.height,
+                child: StaggeredGrid.count(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 4,
+                  crossAxisSpacing: 4,
+                  children: [
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 2,
+                      child: Column(
+                        children: [Text("Project:")],
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 1,
+                      child: SimpleLineChart(
+                        data: [
+                          SimpleSeries(
+                              year: 2021,
+                              points: 10,
+                              barColor: charts.ColorUtil.fromDartColor(
+                                  Color.fromARGB(255, 62, 213, 152))),
+                          SimpleSeries(
+                              year: 2022,
+                              points: 2500,
+                              barColor: charts.ColorUtil.fromDartColor(
+                                  Color.fromARGB(255, 62, 213, 152)))
+                        ],
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: SimpleLineChart(
+                        data: [
+                          SimpleSeries(
+                              year: 2021,
+                              points: 10,
+                              barColor: charts.ColorUtil.fromDartColor(
+                                  Color.fromARGB(255, 62, 213, 152))),
+                          SimpleSeries(
+                              year: 2022,
+                              points: 2500,
+                              barColor: charts.ColorUtil.fromDartColor(
+                                  Color.fromARGB(255, 62, 213, 152)))
+                        ],
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: SimpleLineChart(
+                        data: [
+                          SimpleSeries(
+                              year: 2021,
+                              points: 10,
+                              barColor: charts.ColorUtil.fromDartColor(
+                                  Color.fromARGB(255, 62, 213, 152))),
+                          SimpleSeries(
+                              year: 2022,
+                              points: 2500,
+                              barColor: charts.ColorUtil.fromDartColor(
+                                  Color.fromARGB(255, 62, 213, 152)))
+                        ],
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 4,
+                      mainAxisCellCount: 2,
+                      child: SimpleLineChart(
+                        data: [
+                          SimpleSeries(
+                              year: 2021,
+                              points: 10,
+                              barColor: charts.ColorUtil.fromDartColor(
+                                  Color.fromARGB(255, 62, 213, 152))),
+                          SimpleSeries(
+                              year: 2022,
+                              points: 2500,
+                              barColor: charts.ColorUtil.fromDartColor(
+                                  Color.fromARGB(255, 62, 213, 152)))
+                        ],
+                      ),
+                    ),
+                  ],
+                ))
           ],
         ),
       ),
